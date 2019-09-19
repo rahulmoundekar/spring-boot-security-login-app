@@ -27,7 +27,16 @@ Spring security is the highly customizable authentication and access-control fra
     3} The AuthenticationManager returns a fully populated Authentication instance on successful authentication.
     4} The final step is to establish a security context by invoking SecurityContextHolder.getContext().setAuthentication(), passing in the returned authentication object.
     
-    
+## Dependencies pom.xml
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-data-jpa</artifactId>
+  </dependency>
+  
+  <dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-security</artifactId>
+  </dependency>
     
     
     
