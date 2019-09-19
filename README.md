@@ -37,7 +37,8 @@ Spring security is the highly customizable authentication and access-control fra
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
     
-
+## UserDetailsService
+    It represents a principal, but in an extensible and application-specific way. Think of UserDetails as the adapter between your own user database and what Spring Security needs inside the SecurityContextHolder. UserDetailsService is a core interface in spring security to load user specific data. This interface is considered as user DAO and will be implemented by specific DAO implementations.
   
     
     
