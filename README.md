@@ -11,3 +11,24 @@ Spring security is the highly customizable authentication and access-control fra
   
   ### “Authorization” refers to the process of deciding whether a principal is allowed to perform an action within your application. To arrive at the point where an authorization decision is needed, the identity of the principal has already been established by the authentication process. These concepts are common, and not at all specific to Spring Security.
   
+## Authentication
+
+    Let’s consider a standard authentication scenario that everyone is familiar with.
+
+    A user is prompted to log in with a username and password.
+    The system verifies that the password is correct for the username.
+    The context information for that user is obtained their list of roles and so on.
+    A security context is established for the user
+    The user proceeds, potentially to perform some operation which is potentially protected by an access control mechanism which checks the required permissions for the operation against the current security context information.
+   ### The following are the steps to achieve the authentication:
+   
+    1}Authentication is an interface which has several implementations for different authentication models. For a simple user name and password authentication, spring security would use UsernamePasswordAuthenticationToken. When user enters username and password, system creates a new instance of UsernamePasswordAuthenticationToken.
+    2} The token is passed to an instance of AuthenticationManager for validation. Internally what AuthenticationManager will do is to iterate the list of configured AuthenticationProvider to validate the request. There should be at least one provider to be configured for the valid authentication.
+    3} The AuthenticationManager returns a fully populated Authentication instance on successful authentication.
+    4} The final step is to establish a security context by invoking SecurityContextHolder.getContext().setAuthentication(), passing in the returned authentication object.
+    
+    
+    
+    
+    
+    
